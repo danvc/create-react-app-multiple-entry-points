@@ -65,26 +65,26 @@ const resolveModule = (resolveFn, filePath) => {
   return resolveFn(`${filePath}.js`);
 };
 
+var appPages = require(resolveApp('package.json')).appPages;
+
+if (appPages === undefined || appPages === null || appPages.length === 0) {
+    console.log("You must defined the entry points in your package.json using the parameter 'appPages'.");
+    process.exit(1);
+} else appPages = appPages.map((ep) => { 
+    return { 
+        ...ep, 
+        appHtml: resolveApp(ep.appHtml),
+        appIndexJs: resolveModule(resolveApp, ep.appIndexJs),
+    }
+})
+
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
   appBuild: resolveApp('build'),
   appPublic: resolveApp('public'),
-  appPages: [
-    {
-        name: "index",
-        title: "index",
-        appHtml: resolveApp('public/index.html'),
-        appIndexJs: resolveModule(resolveApp, 'src/index'),
-    },
-    {
-        name: "login",
-        title: "login",
-        appHtml: resolveApp('public/login.html'),
-        appIndexJs: resolveModule(resolveApp, 'src/login'),
-    }
-  ],
+  appPages: appPages,
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   appTsConfig: resolveApp('tsconfig.json'),

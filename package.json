@@ -2,6 +2,20 @@
   "name": "test",
   "version": "0.1.0",
   "private": true,
+  "appPages": [
+    {
+        "name": "index",
+        "title": "index",
+        "appHtml": "public/index.html",
+        "appIndexJs": "src/index"
+    },
+    {
+        "name": "login",
+        "title": "login",
+        "appHtml": "public/login.html",
+        "appIndexJs": "src/login"
+    }
+  ],
   "dependencies": {
     "@babel/core": "7.7.4",
     "@svgr/webpack": "4.3.3",

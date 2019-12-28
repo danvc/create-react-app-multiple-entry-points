@@ -1,7 +1,8 @@
 ## Create React App with multiple entry points
 
 **Attention**: It's an `ejected` version of `create-react-app`, however, I'm going to push a PR for this missing feature.
-** There's a pending PR for this solution on https://github.com/facebook/create-react-app/pull/8249
+
+**There's a pending PR for this solution on https://github.com/facebook/create-react-app/pull/8249**
 
 To add more entry points, follow the steps:
 - Add a new page in the `package.json` in the property `appPages`. There are 2 existing pages there: `index` and `login`;

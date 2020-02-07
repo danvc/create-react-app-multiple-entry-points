@@ -1,6 +1,6 @@
 ## Create React App with multiple entry points
 
-**Attention**: It's an `ejected` version of `create-react-app`, however, I'm going to push a PR for this missing feature.
+**Attention**: It's an `ejected` version of `create-react-app`, however, I'm going to push a PR for this missing feature. The non `ejected` version could be find here: https://github.com/DanZeuss/create-react-app
 
 **There's a pending PR for this solution on https://github.com/facebook/create-react-app/pull/8249**
 
